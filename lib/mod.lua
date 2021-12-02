@@ -13,9 +13,6 @@ local mod = require 'core/mods'
 -- here a single table is used to hold some x/y values
 --
 
-local grid = {
-  util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
-}
 
 --
 -- [optional] hooks are essentially callbacks which can be used by multiple mods
@@ -30,6 +27,14 @@ local grid = {
 -- and test out access to mod level state via mod supplied fuctions.
 --
 
-mod.hook.register("system_post_startup", "my startup hacks", function()
+mod.hook.register("system_post_startup", "my startup hacks", function(
+    local grid = {
+  util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
+}
+    )
   state.system_post_startup = true
+end)
+
+mod.hook.register("script_pre_init", "my init hacks", function()
+  -- tweak global environment here ahead of the script `init()` function being called
 end)
