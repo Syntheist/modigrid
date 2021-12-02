@@ -13,8 +13,9 @@ local mod = require 'core/mods'
 -- here a single table is used to hold some x/y values
 --
 
-local grid = util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
-
+local grid = {
+  util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
+}
 
 --
 -- [optional] hooks are essentially callbacks which can be used by multiple mods
