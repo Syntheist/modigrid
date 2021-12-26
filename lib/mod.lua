@@ -13,8 +13,8 @@ local mod = require 'core/mods'
 -- here a single table is used to hold some x/y values
 --
 
-local state = {
-grid = util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
+local grid = {
+util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
 }
 
 
@@ -32,7 +32,7 @@ grid = util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128
 --
 
 mod.hook.register("system_post_startup", "my startup hacks", function()
-  state.system_post_startup = true
+  grid.system_post_startup = true
 end)
 
 mod.hook.register("script_pre_init", "my init hacks", function()
