@@ -35,7 +35,7 @@ end)
 
 mod.hook.register("script_pre_init", "my init hacks", function()
   -- tweak global environment here ahead of the script `init()` function being called
-    grid.script_pre_init = false
+    grid.script_pre_init = true
 end)
 
 
