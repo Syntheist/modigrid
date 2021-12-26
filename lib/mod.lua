@@ -30,11 +30,11 @@ local modigrid = {
 -- and test out access to mod level state via mod supplied fuctions.
 --
 
-mod.hook.register("system_post_startup", "modigrid", function()
+mod.hook.register("system_post_startup", "modigrid hax", function()
 --  modigrid.system_post_startup = true
 end)
 
-mod.hook.register("script_pre_init", "modigrid", function()
+mod.hook.register("script_pre_init", "modigrid hax", function()
   -- tweak global environment here ahead of the script `init()` function being called
     modigrid.script_pre_init = true
 end)
