@@ -14,7 +14,7 @@ local mod = require 'core/mods'
 --
 
 local state = {
-local grid = util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
+grid = util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or grid
 }
 
 
