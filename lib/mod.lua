@@ -32,12 +32,12 @@ util.file_exists(_path.code.."midigrid") and include "midigrid/lib/mg_128" or gr
 --
 
 mod.hook.register("system_post_startup", "my startup hacks", function()
-  grid.system_post_startup = false
+  grid.system_post_startup = true
 end)
 
 mod.hook.register("script_pre_init", "my init hacks", function()
   -- tweak global environment here ahead of the script `init()` function being called
-    grid.script_pre_init = true
+    grid.script_pre_init = false
 end)
 
 
